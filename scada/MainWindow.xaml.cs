@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace scada
+namespace Scada
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

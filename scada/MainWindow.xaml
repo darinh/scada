@@ -1,6 +1,8 @@
-﻿<Window x:Class="scada.MainWindow"
+﻿<Window x:Class="Scada.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:Scada.Controls;assembly=Scada.Controls"
+        xmlns:m="clr-namespace:Scada.Controls.Modifiers;assembly=Scada.Controls"
         Title="MainWindow" Height="1024" Width="1280">
     <!-- BLEND: http://www.microsoft.com/en-us/download/details.aspx?id=30702 -->
     <!-- RIBBON: http://msdn.microsoft.com/en-us/library/ff799534.aspx -->
@@ -120,8 +122,23 @@
 			</MenuItem>
     	</Menu>
 
-		<Canvas Grid.Row="1" Name="SchematicDesign" Background="LightGray">
-		</Canvas>
+		<Canvas Grid.Row="1" Name="Schematic" Background="LightGray">
+            <Canvas.Resources>
+                
+            </Canvas.Resources>
+            <!--<ContentControl Name="DesignerItem"
+                   Width="100"
+                   Height="100"
+                   Canvas.Top="100"
+                   Canvas.Left="100"
+                   Template="{StaticResource DesignerItemControlTemplate}">
+                <Ellipse Fill="Blue" IsHitTestVisible="False"/>
+            </ContentControl>-->
+            <c:BlueEllipse />
+            <c:BlueEllipse />
+            <c:BlueEllipse />
+            <c:BlueEllipse />
+        </Canvas>
         
     </Grid>
 </Window>
