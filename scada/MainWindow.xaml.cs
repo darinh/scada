@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Scada.Controls;
+
 namespace Scada
 {
     /// <summary>
@@ -23,6 +25,21 @@ namespace Scada
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void NewSchematic_Click(object sender, RoutedEventArgs e)
+        {
+            Schematic.Children.Clear();
+        }
+
+        private void mnuTank_Click(object sender, RoutedEventArgs e)
+        {
+            Schematic.Children.Add(new Tank());
+        }
+
+        private void mnuBlueEllipse_Click(object sender, RoutedEventArgs e)
+        {
+            Schematic.Children.Add(new BlueEllipse());
         }
     }
 }

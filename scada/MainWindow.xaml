@@ -41,7 +41,7 @@
 					</Style.Triggers>
 				</Style>
 			</Menu.Resources>
-    		<MenuItem Name="NewSchematic" Margin="5" Background="#FF354966" Style="{StaticResource BaseStyle}" >
+    		<MenuItem Name="NewSchematic" Margin="5" Background="#FF354966" Style="{StaticResource BaseStyle}" Click="NewSchematic_Click">
     			<MenuItem.Template>
     				<ControlTemplate>
     					<Grid Background="{TemplateBinding Background}">
@@ -85,7 +85,7 @@
 									</ControlTemplate>
 								</MenuItem.Template>
 							</MenuItem>
-							<MenuItem Grid.Row="1" Grid.Column="0" Name="Pump" Margin="5" Background="#FF354966" Style="{StaticResource BaseStyle}" >
+							<MenuItem Grid.Row="1" Grid.Column="0" Name="mnuSave" Margin="5" Background="#FF354966" Style="{StaticResource BaseStyle}" >
     							<MenuItem.Template>
     								<ControlTemplate>
      									<Grid Background="{TemplateBinding Background}">
@@ -98,7 +98,7 @@
 									</ControlTemplate>
 								</MenuItem.Template>
 							</MenuItem>
-							<MenuItem Grid.Row="2" Grid.Column="0" Name="Meter" Margin="5" Background="#FF354966" Style="{StaticResource BaseStyle}" >
+							<MenuItem Grid.Row="2" Grid.Column="0" Name="mnuPrint" Margin="5" Background="#FF354966" Style="{StaticResource BaseStyle}" >
     							<MenuItem.Template>
     								<ControlTemplate>
     									<Grid Background="{TemplateBinding Background}">
@@ -120,24 +120,50 @@
 					</ControlTemplate>				
 				</MenuItem.Template>
 			</MenuItem>
-    	</Menu>
+            <MenuItem>
+                <MenuItem.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <MenuItem Grid.Row="0" Grid.Column="0" Name="mnuTank" Margin="5" Background="#FF354966" Style="{StaticResource BaseStyle}" Click="mnuTank_Click" >
+                                <MenuItem.Template>
+                                    <ControlTemplate>
+                                        <Grid Background="{TemplateBinding Background}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Path Data="M0,0 L8,0 8,2.5  19,2.5 19,15 0,15
+												            M9.5,3 L15,8 12,8 12,14 7,14 7,8 4,8 z" Fill="#FFF1F1F1" Stretch="Uniform" Margin="5"/>
+                                                <AccessText Text="_Tank" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="12" Foreground="#FFF1F1F1" Margin="5"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </MenuItem.Template>
+                            </MenuItem>
+                            <MenuItem Grid.Row="1" Grid.Column="0" Name="mnuBlueEllipse" Margin="5" Background="#FF354966" Style="{StaticResource BaseStyle}" Click="mnuBlueEllipse_Click">
+                                <MenuItem.Template>
+                                    <ControlTemplate>
+                                        <Grid Background="{TemplateBinding Background}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Path Data="M0,0 L8,0 8,2.5 19,2.5 19,15 0,15
+															M9.5,14.5 L15,9 12,9 12,3.5 7,3.5 7,9 4,9 z" Fill="#FFF1F1F1" Stretch="Uniform" Margin="5"/>
+                                                <AccessText Text="_Blue Ellipse" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="12" Foreground="#FFF1F1F1" Margin="5"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </MenuItem.Template>
+                            </MenuItem>
+                        </Grid>
+                    </ControlTemplate>
+                </MenuItem.Template>
+            </MenuItem>
+        </Menu>
 
 		<Canvas Grid.Row="1" Name="Schematic" Background="LightGray">
-            <Canvas.Resources>
-                
-            </Canvas.Resources>
-            <!--<ContentControl Name="DesignerItem"
-                   Width="100"
-                   Height="100"
-                   Canvas.Top="100"
-                   Canvas.Left="100"
-                   Template="{StaticResource DesignerItemControlTemplate}">
-                <Ellipse Fill="Blue" IsHitTestVisible="False"/>
-            </ContentControl>-->
-            <c:BlueEllipse />
-            <c:BlueEllipse />
-            <c:BlueEllipse />
-            <c:BlueEllipse />
         </Canvas>
         
     </Grid>

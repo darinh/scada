@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Scada.Controls.Tank"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:m="clr-namespace:Scada.Controls.Modifiers"
+             xmlns:c="clr-namespace:Scada.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="250">
+    <Grid>
+        <m:Drag DataContext="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=c:Tank}}" Cursor="SizeAll"/>
+        <m:Resize DataContext="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=c:Tank}}" />
+        <Grid IsHitTestVisible="False">
+						
+        </Grid>
+        <Path Data="M0,30 C50,0 200,0 250,30 L250,270 C200,300 50,300 0,270 0,270 0,30 0,30 z" Stretch="Uniform" Width="250" Stroke="#FF1F1F1F" StrokeThickness="2">
+        	<Path.Fill>
+        		<LinearGradientBrush EndPoint="1.016,0.5" StartPoint="0.003,0.5">
+        			<GradientStop Color="#FF4A4A4A" Offset="0"/>
+        			<GradientStop Color="#FF797979" Offset="1"/>
+        		</LinearGradientBrush>
+        	</Path.Fill>
+        </Path>
+    </Grid>
+</UserControl>
