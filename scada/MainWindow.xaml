@@ -163,8 +163,7 @@
             </MenuItem>
         </Menu>
 
-		<Canvas Grid.Row="1" Name="Schematic" Background="LightGray">
-        </Canvas>
+		<Canvas Grid.Row="1" Name="Schematic" Background="LightGray"/>
         
     </Grid>
 </Window>
