@@ -6,20 +6,35 @@
              xmlns:m="clr-namespace:Scada.Controls.Modifiers"
              xmlns:c="clr-namespace:Scada.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="250">
+             d:DesignHeight="300" d:DesignWidth="250" MouseDoubleClick="UserControl_MouseDoubleClick_1">
+	
     <Grid>
         <m:Drag DataContext="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=c:Tank}}" Cursor="SizeAll"/>
         <m:Resize DataContext="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=c:Tank}}" />
+		<Viewbox>
         <Grid IsHitTestVisible="False">
-			<Path Data="M0,30 C50,0 200,0 250,30 L250,270 C200,300 50,300 0,270 0,270 0,30 0,30 z" Stretch="Uniform" Stroke="#FF1F1F1F" StrokeThickness="2">
+            <Path x:Name="TankDrawing" Data="M0,30 C50,0 200,0 250,30 L250,270 C200,300 50,300 0,270 0,270 0,30 0,30 z" Stretch="Uniform"/>
+            <Path x:Name="TankGradient" Data="M0,30 C50,0 200,0 250,30 L250,270 C200,300 50,300 0,270 0,270 0,30 0,30 z" Stretch="Uniform">
         	    <Path.Fill>
         		    <LinearGradientBrush EndPoint="1.016,0.5" StartPoint="0.003,0.5">
-        			    <GradientStop Color="#FF4A4A4A" Offset="0"/>
-        			    <GradientStop Color="#FF797979" Offset="1"/>
+        			    <GradientStop Color="#80000000" Offset="0"/>
+        			    <GradientStop Offset="1"/>
         		    </LinearGradientBrush>
         	    </Path.Fill>
-            </Path>			
+            </Path>
+            <ProgressBar x:Name="TankFill" Margin="0,22,24,22" Orientation="Vertical" Value="50" Foreground="#FF557490" HorizontalAlignment="Right" Width="20" BorderBrush="{x:Null}" Clip="M1,1 L19,5 L19,237 L1,241 z" />
+			<Path x:Name="TankFillGradient" Data="M205,40 L230,44 230,276 205,280 z" Margin="0,22,24,22" Stretch="Fill" HorizontalAlignment="Right" Width="20" StrokeThickness="2" Stroke="#FF1F1F1F" >
+            	<Path.Fill>
+            		<LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+            			<GradientStop Color="#3F000000" Offset="0"/>
+            			<GradientStop Offset="0.992" Color="#3F000000"/>
+            			<GradientStop Color="#00000000" Offset="0.15"/>
+            			<GradientStop Color="#00000000" Offset="0.85"/>
+            		</LinearGradientBrush>
+            	</Path.Fill>
+            </Path>
+                <Label Content="{Binding ElementName=TankFill, Path=Value}" FontSize="50" Background="#7FFFFFFF" Margin="20,0,0,0" Padding="2" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="#FF1F1F1F" BorderThickness="2"/>
         </Grid>
-        
+        </Viewbox>
     </Grid>
 </UserControl>

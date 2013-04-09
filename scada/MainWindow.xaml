@@ -136,8 +136,7 @@
                                     <ControlTemplate>
                                         <Grid Background="{TemplateBinding Background}">
                                             <StackPanel Orientation="Horizontal">
-                                                <Path Data="M0,0 L8,0 8,2.5  19,2.5 19,15 0,15
-												            M9.5,3 L15,8 12,8 12,14 7,14 7,8 4,8 z" Fill="#FFF1F1F1" Stretch="Uniform" Margin="5"/>
+                                                <Path Data="M0,30 C50,0 200,0 250,30 L250,270 C200,300 50,300 0,270 0,270 0,30 0,30 z" Height="16" Fill="#FFF1F1F1" Stretch="Uniform" Stroke="#FF7BA3DE" StrokeThickness="0.5" Margin="5"/>
                                                 <AccessText Text="_Tank" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="12" Foreground="#FFF1F1F1" Margin="5"/>
                                             </StackPanel>
                                         </Grid>
